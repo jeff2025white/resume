@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Xiaozhe B. — Backend Software Engineer</title>
-  <meta name="description" content="Xiaozhe B. is a backend engineer in Chongqing, focused on cross-border e-commerce systems: orders, merchant APIs, and high-concurrency services.">
+  <title>Xiaozhe Bai — Backend Software Engineer</title>
+  <meta name="description" content="Xiaozhe Bai is a backend engineer in Chongqing with 7 years of experience in cross-border e-commerce systems: orders, settlement, merchant open APIs, and high-concurrency services.">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Xiaozhe Bai — Backend Software Engineer">
+  <meta property="og:description" content="7 years building order, settlement, and merchant open API systems for global cross-border e-commerce.">
+  <meta name="theme-color" content="#f3efe6">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238f2d1f'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23faf7f1' text-anchor='middle'%3EXB%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,6 +23,7 @@
       --accent: #8f2d1f;
       --chip: #efe8db;
       --max: 880px;
+      --nav-h: 52px;
     }
 
     * { box-sizing: border-box; }
@@ -42,20 +48,58 @@
       margin: 0 auto;
     }
 
-    header.top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      padding: 28px 0 0;
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(243, 239, 230, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
-    header.top a { text-decoration: none; border-bottom: 1px solid var(--line); }
+    .site-nav .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: var(--nav-h);
+    }
+
+    .site-nav .brand {
+      flex: 0 0 auto;
+      font-family: Newsreader, Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .site-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px 14px;
+      margin: 0;
+      padding: 10px 0;
+      list-style: none;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--accent);
+      border-bottom-color: rgba(143, 45, 31, 0.35);
+    }
 
     .hero {
       padding: 48px 0 28px;
@@ -102,7 +146,10 @@
 
     main { padding-bottom: 72px; }
 
-    section { padding: 36px 0 8px; }
+    section {
+      padding: 36px 0 8px;
+      scroll-margin-top: calc(var(--nav-h) + 12px);
+    }
 
     h2 {
       display: flex;
@@ -126,6 +173,33 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.5;
+    }
+
+    .jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px;
+    }
+
+    .jump a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(143, 45, 31, 0.28);
+    }
+
+    .group-title {
+      margin: 28px 0 8px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .links {
@@ -170,6 +244,7 @@
     .entry {
       padding: 18px 0;
       border-top: 1px solid var(--line);
+      scroll-margin-top: calc(var(--nav-h) + 12px);
     }
 
     .entry h3 {
@@ -185,20 +260,17 @@
       font-size: 15px;
     }
 
+    .entry > p {
+      margin: 12px 0 0;
+      max-width: 68ch;
+    }
+
     .entry ul {
       margin: 12px 0 0;
       padding-left: 18px;
     }
 
     .entry li { margin: 4px 0; }
-
-    .empty {
-      margin: 0;
-      padding: 22px;
-      border: 1px dashed var(--line);
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.35);
-    }
 
     .project + .project { margin-top: 0; }
 
@@ -256,7 +328,13 @@
 
     .shots .wide { grid-column: 1 / -1; }
 
-    .shots .wide img { height: auto; }
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 32px;
+    }
+
+    .facts .entry h3 { font-size: 22px; }
 
     footer {
       padding: 8px 0 40px;
@@ -267,34 +345,65 @@
     @media (max-width: 640px) {
       .wrap { width: min(var(--max), calc(100% - 28px)); }
       .role { font-size: 19px; }
-      header.top { flex-direction: column; gap: 6px; }
+      .site-nav .inner { flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 0 4px; }
+      .site-nav ul { justify-content: flex-start; padding-top: 4px; }
       .shots { grid-template-columns: 1fr; }
       .shots .wide { grid-column: auto; }
-      .shots img,
-      .shots .wide img { height: auto; }
+      .facts { grid-template-columns: 1fr; }
     }
 
     @media print {
-      body { background: white; }
+      @page { size: A4; margin: 14mm 14mm 16mm; }
+      body { background: white; font-size: 10.5pt; }
+      .wrap { width: 100%; }
+      .site-nav, .jump { display: none; }
+      .hero { padding: 0 0 14px; }
+      h1 { font-size: 36pt; }
+      .role { margin-top: 10px; font-size: 13pt; }
+      .meta { margin-top: 12px; }
+      section { padding: 16px 0 2px; }
+      h2 { margin-bottom: 10px; }
+      .chips { gap: 6px; }
+      .chips li { padding: 3px 9px; font-size: 9pt; }
+      .entry { padding: 12px 0; }
+      footer { display: none; }
+      h2, h3, .where { break-after: avoid; }
+      #projects { break-before: page; padding-top: 0; }
+      .entry + .group-title { break-before: page; margin-top: 0; }
+      .shots .wide figure { width: 82%; }
+      #project-order .shots .wide figure,
+      #project-open-api .shots .wide figure { width: 62%; }
+      .entry h3 { font-size: 18pt; }
+      .shots li, .facts .entry { break-inside: avoid; }
       a { text-decoration: none; }
-      .empty { display: none; }
+      .meta a, .links a, .entry > p a, footer a { color: var(--accent); }
     }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <header class="top">
-      <span>Chongqing, China</span>
-      <a href="https://www.upwork.com/freelancers/~01b3f98c7ba6c47674">Upwork profile</a>
-    </header>
+<body id="top">
+  <nav class="site-nav" aria-label="Primary">
+    <div class="wrap inner">
+      <a class="brand" href="#top">Xiaozhe Bai</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="mailto:jeff2025white@gmail.com">Contact</a></li>
+        <li><a href="Xiaozhe-Bai-Resume.pdf" download>PDF</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <div class="wrap">
     <section class="hero">
-      <p class="eyebrow">Backend · Cross-border commerce</p>
-      <h1>Xiaozhe B.</h1>
+      <p class="eyebrow">Backend · Cross-border commerce · Chongqing, China</p>
+      <h1>Xiaozhe Bai</h1>
       <p class="role">Backend Software Engineer focused on cross-border e-commerce systems.</p>
       <ul class="meta">
-        <li>$15 / hour</li>
-        <li>Identity verified</li>
+        <li><a href="mailto:jeff2025white@gmail.com">jeff2025white@gmail.com</a></li>
+        <li><a href="https://www.upwork.com/freelancers/~01b3f98c7ba6c47674">Upwork</a></li>
         <li><a href="https://youtube.com/shorts/cTRGQABL8Tg">Intro video</a></li>
       </ul>
     </section>
@@ -304,7 +413,7 @@
         <h2><span>01</span> About</h2>
         <div class="about">
           <p>
-            Backend engineer with 7+ years at Alibaba, building distributed systems for AliExpress’s global cross-border business. The work centers on order and transaction systems, merchant open APIs, high-concurrency optimization, and multi-region deployment — keeping high-traffic services stable through performance tuning and fault isolation.
+            Backend engineer with 7 years at Alibaba, building distributed systems for AliExpress’s global cross-border business. The work centers on order and transaction systems, merchant open APIs, high-concurrency optimization, and multi-region deployment — keeping high-traffic services stable through performance tuning and fault isolation.
           </p>
         </div>
       </section>
@@ -319,11 +428,14 @@
           <li>Redis</li>
           <li>Kafka</li>
           <li>RocketMQ</li>
+          <li>API gateway</li>
           <li>Distributed locks</li>
-          <li>Back-end development</li>
-          <li>Web applications</li>
-          <li>Mobile apps</li>
-          <li>Artificial intelligence</li>
+          <li>DB sharding</li>
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>PostgreSQL</li>
+          <li>LLM integration</li>
+          <li>OCR / computer vision</li>
         </ul>
       </section>
 
@@ -331,23 +443,98 @@
         <h2><span>03</span> Experience</h2>
         <article class="entry">
           <h3>Backend engineer</h3>
-          <p class="where">Alibaba · AliExpress · 7+ years</p>
-          <ul>
-            <li>Designed order and transaction systems for global cross-border commerce.</li>
-            <li>Built merchant open APIs used by sellers on the platform.</li>
-            <li>Tuned high-concurrency services and multi-region deployments.</li>
-            <li>Isolated faults and stabilized high-traffic online services.</li>
-          </ul>
+          <p class="where">Alibaba · AliExpress · 7 years</p>
+          <p>
+            Owned backend services for order, settlement, and merchant open APIs on a global cross-border marketplace, from high-concurrency tuning to multi-region deployment. See <a href="#project-order">order &amp; settlement</a> and <a href="#project-open-api">open API gateway</a> below.
+          </p>
         </article>
       </section>
 
+      <section id="education">
+        <h2><span>04</span> Education &amp; languages</h2>
+        <div class="facts">
+          <article class="entry">
+            <h3>Shanghai Jiao Tong University</h3>
+            <p class="where">Bachelor of Applied Science (BASc), Computer Science · 2015 – 2019</p>
+          </article>
+          <article class="entry">
+            <h3>Languages</h3>
+            <p class="where">Chinese — native or bilingual</p>
+            <p class="where">English — fluent (written)</p>
+          </article>
+        </div>
+      </section>
+
       <section id="projects">
-        <h2><span>04</span> Projects</h2>
+        <h2><span>05</span> Projects</h2>
+        <ul class="jump">
+          <li><a href="#project-order">Order &amp; settlement</a></li>
+          <li><a href="#project-open-api">Open API gateway</a></li>
+          <li><a href="#project-npc2">NPC2</a></li>
+          <li><a href="#project-gather">Gather + Flash</a></li>
+        </ul>
+
+        <p class="group-title">Employer work</p>
+        <p class="note">
+          Selected work from a previous employer. Descriptions stay high-level and do not disclose confidential business data, internal metrics, or proprietary code.
+        </p>
+
+        <article class="entry project" id="project-order">
+          <h3>Cross-border Order &amp; Settlement Backend</h3>
+          <p class="where">Backend Software Engineer · AliExpress / Alibaba</p>
+          <p>
+            Built a distributed order pipeline for a global cross-border marketplace. Implemented the order state machine, settlement splitting, idempotent control, and async notification for merchant services. Used MQ decoupling, DB sharding, distributed locks, and rate limiting to prevent overselling and duplicate orders. Tuned hot cache and slow SQL to stabilize peak traffic under flash sales, with multi-region global deployment.
+          </p>
+          <ul class="stack">
+            <li>Java</li>
+            <li>Microservices</li>
+            <li>MySQL</li>
+            <li>Redis</li>
+            <li>Apache Kafka</li>
+          </ul>
+          <ul class="shots">
+            <li class="wide">
+              <figure>
+                <a href="images/project2/order-settlement.png">
+                  <img loading="lazy" decoding="async" src="images/project2/order-settlement.png" alt="Architecture diagram for order core, settlement, Redis, MySQL sharding, and async messaging">
+                </a>
+                <figcaption>Architecture overview</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry project" id="project-open-api">
+          <h3>Merchant Open API Gateway</h3>
+          <p class="where">Backend Software Engineer · AliExpress / Alibaba</p>
+          <p>
+            Developed merchant-side open API services for third-party ISV integration. Designed authentication, permission control, throttling, tracing, and graceful degradation. Standardized API response specs and isolated service traffic to protect core business, so merchants could query order, product, and fund data in batches reliably.
+          </p>
+          <ul class="stack">
+            <li>Go</li>
+            <li>API gateway</li>
+            <li>Microservices</li>
+            <li>Redis</li>
+            <li>Performance optimization</li>
+          </ul>
+          <ul class="shots">
+            <li class="wide">
+              <figure>
+                <a href="images/project2/open-api-gateway.png">
+                  <img loading="lazy" decoding="async" src="images/project2/open-api-gateway.png" alt="Architecture diagram for open API gateway, auth, quota, circuit breaker, and Redis cache">
+                </a>
+                <figcaption>Gateway architecture</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </article>
+
+        <p class="group-title">Personal projects</p>
         <p class="note">
           Personal projects. I own the copyright. They do not use or disclose any former employer’s confidential business information. Repositories are private; access can be granted on request.
         </p>
 
-        <article class="entry project">
+        <article class="entry project" id="project-npc2">
           <h3>NPC2</h3>
           <p class="where">Motive-driven generative agents · personal project</p>
           <ul class="links">
@@ -369,7 +556,7 @@
             <li class="wide">
               <figure>
                 <a href="images/npc2/截屏2026-11-04%2011.40.00.png">
-                  <img src="images/npc2/截屏2026-11-04%2011.40.00.png" alt="NPC2 sandbox with three characters and live motive labels">
+                  <img loading="lazy" decoding="async" src="images/npc2/截屏2026-11-04%2011.40.00.png" alt="NPC2 sandbox with three characters and live motive labels">
                 </a>
                 <figcaption>Live sandbox</figcaption>
               </figure>
@@ -377,7 +564,7 @@
             <li class="wide">
               <figure>
                 <a href="images/npc2/截屏2026-11-04%2011.45.41.png">
-                  <img src="images/npc2/截屏2026-11-04%2011.45.41.png" alt="NPC2 motive editor with sensitivity tiers and social relations">
+                  <img loading="lazy" decoding="async" src="images/npc2/截屏2026-11-04%2011.45.41.png" alt="NPC2 motive editor with sensitivity tiers and social relations">
                 </a>
                 <figcaption>Motive editor</figcaption>
               </figure>
@@ -385,7 +572,7 @@
           </ul>
         </article>
 
-        <article class="entry project">
+        <article class="entry project" id="project-gather">
           <h3>Gather + Flash</h3>
           <p class="where">In-store capture and quick-commerce retail insight · personal project</p>
           <ul class="links">
@@ -397,6 +584,7 @@
             <li>Gather drives a mirrored phone from an edge box: screen frames in, touch out through a custom RP2040 HID digitizer.</li>
             <li>A control center runs capture batches, parses shelf cards into price, sales, brand, and spec, and resumes large catalogs.</li>
             <li>Flash reads that catalog into a district board: assortment gaps, price position, and same-item sales against nearby stores.</li>
+            <li>One capture batch parsed 5,207 screenshots in 2 h 19 min, about 370 frames every 10 minutes.</li>
           </ul>
           <ul class="stack">
             <li>Python</li>
@@ -412,7 +600,7 @@
             <li>
               <figure>
                 <a href="images/gather/截屏2026-11-04%2011.21.33.png">
-                  <img src="images/gather/截屏2026-11-04%2011.21.33.png" alt="Gather live cast console with phone stream and HID touch controls">
+                  <img loading="lazy" decoding="async" src="images/gather/截屏2026-11-04%2011.21.33.png" alt="Gather live cast console with phone stream and HID touch controls">
                 </a>
                 <figcaption>Gather · live cast</figcaption>
               </figure>
@@ -420,7 +608,7 @@
             <li>
               <figure>
                 <a href="images/gather/截屏2026-11-04%2011.22.12.png">
-                  <img src="images/gather/截屏2026-11-04%2011.22.12.png" alt="Gather capture task panel with batch history">
+                  <img loading="lazy" decoding="async" src="images/gather/截屏2026-11-04%2011.22.12.png" alt="Gather capture task panel with batch history">
                 </a>
                 <figcaption>Gather · capture tasks</figcaption>
               </figure>
@@ -428,7 +616,7 @@
             <li>
               <figure>
                 <a href="images/gather/截屏2026-11-04%2011.22.39.png">
-                  <img src="images/gather/截屏2026-11-04%2011.22.39.png" alt="Gather item table of parsed product cards">
+                  <img loading="lazy" decoding="async" src="images/gather/截屏2026-11-04%2011.22.39.png" alt="Gather item table of parsed product cards">
                 </a>
                 <figcaption>Gather · parsed cards</figcaption>
               </figure>
@@ -436,7 +624,7 @@
             <li>
               <figure>
                 <a href="images/flash/截屏2026-11-01%2013.57.15.png">
-                  <img src="images/flash/截屏2026-11-01%2013.57.15.png" alt="Flash district board with assortment gaps and price suggestions">
+                  <img loading="lazy" decoding="async" src="images/flash/截屏2026-11-01%2013.57.15.png" alt="Flash district board with assortment gaps and price suggestions">
                 </a>
                 <figcaption>Flash · district board</figcaption>
               </figure>
@@ -444,7 +632,7 @@
             <li class="wide">
               <figure>
                 <a href="images/flash/截屏2026-11-01%2013.56.50.png">
-                  <img src="images/flash/截屏2026-11-01%2013.56.50.png" alt="Flash competitor sales comparison">
+                  <img loading="lazy" decoding="async" src="images/flash/截屏2026-11-01%2013.56.50.png" alt="Flash competitor sales comparison">
                 </a>
                 <figcaption>Flash · competitor sales</figcaption>
               </figure>
@@ -455,7 +643,7 @@
     </main>
 
     <footer>
-      Open to backend and cross-border commerce work.
+      Open to backend and cross-border commerce work · <a href="mailto:jeff2025white@gmail.com">jeff2025white@gmail.com</a>
     </footer>
   </div>
 </body>
