@@ -370,6 +370,7 @@
       h2, h3, .where { break-after: avoid; }
       #projects { break-before: page; padding-top: 0; }
       .entry + .group-title { break-before: page; margin-top: 0; }
+      #project-live-android { break-before: page; break-inside: avoid; }
       .shots .wide figure { width: 82%; }
       #project-order .shots .wide figure,
       #project-open-api .shots .wide figure { width: 62%; }
@@ -438,6 +439,8 @@
           <li>OCR / computer vision</li>
           <li>PHP</li>
           <li>Laravel</li>
+          <li>Android</li>
+          <li>Vue</li>
         </ul>
       </section>
 
@@ -475,6 +478,7 @@
           <li><a href="#project-npc2">NPC2</a></li>
           <li><a href="#project-gather">Gather + Flash</a></li>
           <li><a href="#project-auction">Online auction</a></li>
+          <li><a href="#project-live-android">Live Android + H5</a></li>
         </ul>
 
         <p class="group-title">Employer work</p>
@@ -534,7 +538,7 @@
 
         <p class="group-title">Personal projects</p>
         <p class="note">
-          Personal projects. I own the copyright. They do not use or disclose any former employer’s confidential business information. Repositories are private; access can be granted on request.
+          Personal projects. They do not use or disclose any former employer’s confidential business information. Private repositories: access can be granted on request. Public repositories are linked below.
         </p>
 
         <article class="entry project" id="project-npc2">
@@ -671,6 +675,31 @@
                 <figcaption>Auction catalog</figcaption>
               </figure>
             </li>
+          </ul>
+        </article>
+
+        <article class="entry project" id="project-live-android">
+          <h3>Live Streaming Android + H5 Client</h3>
+          <p class="where">Multi-module live / short-video / social client · personal project</p>
+          <ul class="links">
+            <li><a href="https://github.com/jeff2025white/live-prj-h5-android-p">github.com/jeff2025white/live-prj-h5-android-p</a></li>
+            <li class="tag">Public</li>
+          </ul>
+          <ul>
+            <li>Customized and shipped a commercial live-streaming stack as a multi-module Android app with Vue H5 pages hosted in WebView for mall, VIP, and task flows.</li>
+            <li>Kept native and H5 on one session: REST auth via `_uid_` / `_token_`, SharedPreferences, and WebView cookie sync for the same backend APIs.</li>
+            <li>Wired live rooms around component messaging (`LiveBundle`): open/close live, Agora RTC tokens, Tencent IM for danmaku/gifts/DMs, plus short video, feed, and messaging tabs.</li>
+            <li>Integrated product flavors, ARouter modules, and third-party SDKs for WeChat/Alipay, push, maps, crash reporting, and Aliyun short-video / OSS upload.</li>
+          </ul>
+          <ul class="stack">
+            <li>Android</li>
+            <li>Java</li>
+            <li>Vue</li>
+            <li>OkHttp / OkGo</li>
+            <li>ARouter</li>
+            <li>Agora RTC</li>
+            <li>Tencent IM</li>
+            <li>WebView JSBridge</li>
           </ul>
         </article>
       </section>
