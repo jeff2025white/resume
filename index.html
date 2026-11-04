@@ -440,7 +440,6 @@
           <li>PHP</li>
           <li>Laravel</li>
           <li>Android</li>
-          <li>Vue</li>
         </ul>
       </section>
 
@@ -478,7 +477,7 @@
           <li><a href="#project-npc2">NPC2</a></li>
           <li><a href="#project-gather">Gather + Flash</a></li>
           <li><a href="#project-auction">Online auction</a></li>
-          <li><a href="#project-live-android">Live Android + H5</a></li>
+          <li><a href="#project-live-android">Live Android</a></li>
         </ul>
 
         <p class="group-title">Employer work</p>
@@ -489,9 +488,10 @@
         <article class="entry project" id="project-order">
           <h3>Cross-border Order &amp; Settlement Backend</h3>
           <p class="where">Backend Software Engineer · AliExpress / Alibaba</p>
-          <p>
-            Built a distributed order pipeline for a global cross-border marketplace. Implemented the order state machine, settlement splitting, idempotent control, and async notification for merchant services. Used MQ decoupling, DB sharding, distributed locks, and rate limiting to prevent overselling and duplicate orders. Tuned hot cache and slow SQL to stabilize peak traffic under flash sales, with multi-region global deployment.
-          </p>
+          <ul>
+            <li>Owned the order/settlement pipeline for a global cross-border marketplace: state machine, settlement split, idempotent writes, and merchant async notifications.</li>
+            <li>Prevented oversell and duplicate orders under flash-sale traffic with MQ decoupling, sharding, distributed locks, and rate limits; stabilized peaks via hot-cache and slow-SQL tuning across multi-region deploy.</li>
+          </ul>
           <ul class="stack">
             <li>Java</li>
             <li>Microservices</li>
@@ -514,9 +514,10 @@
         <article class="entry project" id="project-open-api">
           <h3>Merchant Open API Gateway</h3>
           <p class="where">Backend Software Engineer · AliExpress / Alibaba</p>
-          <p>
-            Developed merchant-side open API services for third-party ISV integration. Designed authentication, permission control, throttling, tracing, and graceful degradation. Standardized API response specs and isolated service traffic to protect core business, so merchants could query order, product, and fund data in batches reliably.
-          </p>
+          <ul>
+            <li>Built merchant open APIs for third-party ISVs to batch-query orders, products, and funds behind auth, permission, quota, and tracing.</li>
+            <li>Isolated open-API traffic from core commerce with throttling and graceful degradation so partner integrations stayed reliable without hurting checkout.</li>
+          </ul>
           <ul class="stack">
             <li>Go</li>
             <li>API gateway</li>
@@ -550,9 +551,8 @@
             <li class="tag">Private</li>
           </ul>
           <ul>
-            <li>Characters act from ten competing motives and a skill list, instead of a fixed script.</li>
-            <li>Routine movement stays on a local pathfinder. Dialogue, conflict, and decisions call an LLM.</li>
-            <li>Each character can use a different model. Motives, social ties, and skills are edited in a web console.</li>
+            <li>Built a sandbox where agents act from competing motives and skills, not fixed scripts; routine pathfinding stays local, while dialogue, conflict, and decisions call an LLM router.</li>
+            <li>Shipped a web console to edit motives, relations, and skills and assign different models per character; demo video available, private repo on request.</li>
           </ul>
           <ul class="stack">
             <li>Python</li>
@@ -589,10 +589,9 @@
             <li class="tag">Private</li>
           </ul>
           <ul>
-            <li>Gather drives a mirrored phone from an edge box: screen frames in, touch out through a custom RP2040 HID digitizer.</li>
-            <li>A control center runs capture batches, parses shelf cards into price, sales, brand, and spec, and resumes large catalogs.</li>
-            <li>Flash reads that catalog into a district board: assortment gaps, price position, and same-item sales against nearby stores.</li>
-            <li>One capture batch parsed 5,207 screenshots in 2 h 19 min, about 370 frames every 10 minutes.</li>
+            <li>Built an edge capture system that drives a mirrored phone (frames in, HID touch out) to scrape in-store shelf cards for quick-commerce pricing and sales intel.</li>
+            <li>Control center batches capture and OCR into price, sales, brand, and spec; Flash turns that catalog into district assortment, price, and sales boards.</li>
+            <li>One batch parsed 5,207 screenshots in 2 h 19 min, about 370 frames every 10 minutes.</li>
           </ul>
           <ul class="stack">
             <li>Python</li>
@@ -652,10 +651,9 @@
           <h3>Online Auction Platform</h3>
           <p class="where">Production-oriented timed bidding marketplace · personal project</p>
           <ul>
-            <li>Built a full Laravel auction stack for warehouse-style lots: catalog, timed bidding, Buy It Now, bid history, and auth-gated bidding.</li>
-            <li>Enforced safe concurrent bids with DB transactions and optimistic locking, plus increment rules (fixed step or percent of current bid).</li>
-            <li>Shipped category filters, sort modes (ending soon, price, activity), multi-image lots, and a scheduler that closes auctions and selects winners.</li>
-            <li>Hardened for production with policies/CSRF, rate-limited bid endpoints, queued notifications, Redis-backed cache/queues, and role-based admin for listings.</li>
+            <li>Built a timed auction marketplace (catalog, bidding, Buy It Now, history) with auth-gated bids.</li>
+            <li>Made concurrent bidding safe with transactions and optimistic locking plus bid-increment rules; a scheduler closes lots and picks winners.</li>
+            <li>Hardened for production with CSRF/policies, rate-limited bid APIs, Redis cache/queues, and role-based admin.</li>
           </ul>
           <ul class="stack">
             <li>Laravel</li>
@@ -679,27 +677,25 @@
         </article>
 
         <article class="entry project" id="project-live-android">
-          <h3>Live Streaming Android + H5 Client</h3>
-          <p class="where">Multi-module live / short-video / social client · personal project</p>
+          <h3>Live Streaming Android Client</h3>
+          <p class="where">Multi-module live / short-video / social app · personal project</p>
           <ul class="links">
             <li><a href="https://github.com/jeff2025white/live-prj-h5-android-p">github.com/jeff2025white/live-prj-h5-android-p</a></li>
             <li class="tag">Public</li>
           </ul>
           <ul>
-            <li>Customized and shipped a commercial live-streaming stack as a multi-module Android app with Vue H5 pages hosted in WebView for mall, VIP, and task flows.</li>
-            <li>Kept native and H5 on one session: REST auth via `_uid_` / `_token_`, SharedPreferences, and WebView cookie sync for the same backend APIs.</li>
-            <li>Wired live rooms around component messaging (`LiveBundle`): open/close live, Agora RTC tokens, Tencent IM for danmaku/gifts/DMs, plus short video, feed, and messaging tabs.</li>
-            <li>Integrated product flavors, ARouter modules, and third-party SDKs for WeChat/Alipay, push, maps, crash reporting, and Aliyun short-video / OSS upload.</li>
+            <li>Shipped a multi-module Android live/social client with login, live rooms, short video, feed, messaging, and wallet against a REST backend.</li>
+            <li>Live rooms combine RTC and IM for gifts, danmaku, and DMs; open/close live and room state stay in sync with backend APIs and tokens.</li>
+            <li>Modularized with ARouter and product flavors; integrated pay, push, maps, and short-video upload for a releasable APK.</li>
           </ul>
           <ul class="stack">
             <li>Android</li>
             <li>Java</li>
-            <li>Vue</li>
+            <li>REST API</li>
             <li>OkHttp / OkGo</li>
             <li>ARouter</li>
             <li>Agora RTC</li>
             <li>Tencent IM</li>
-            <li>WebView JSBridge</li>
           </ul>
         </article>
       </section>
