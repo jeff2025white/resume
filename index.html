@@ -436,6 +436,8 @@
           <li>PostgreSQL</li>
           <li>LLM integration</li>
           <li>OCR / computer vision</li>
+          <li>PHP</li>
+          <li>Laravel</li>
         </ul>
       </section>
 
@@ -472,6 +474,7 @@
           <li><a href="#project-open-api">Open API gateway</a></li>
           <li><a href="#project-npc2">NPC2</a></li>
           <li><a href="#project-gather">Gather + Flash</a></li>
+          <li><a href="#project-auction">Online auction</a></li>
         </ul>
 
         <p class="group-title">Employer work</p>
@@ -636,6 +639,36 @@
                   <img loading="lazy" decoding="async" src="images/flash/截屏2026-11-01%2013.56.50.png" alt="Flash competitor sales comparison">
                 </a>
                 <figcaption>Flash · competitor sales</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry project" id="project-auction">
+          <h3>Online Auction Platform</h3>
+          <p class="where">Production-oriented timed bidding marketplace · personal project</p>
+          <ul>
+            <li>Built a full Laravel auction stack for warehouse-style lots: catalog, timed bidding, Buy It Now, bid history, and auth-gated bidding.</li>
+            <li>Enforced safe concurrent bids with DB transactions and optimistic locking, plus increment rules (fixed step or percent of current bid).</li>
+            <li>Shipped category filters, sort modes (ending soon, price, activity), multi-image lots, and a scheduler that closes auctions and selects winners.</li>
+            <li>Hardened for production with policies/CSRF, rate-limited bid endpoints, queued notifications, Redis-backed cache/queues, and role-based admin for listings.</li>
+          </ul>
+          <ul class="stack">
+            <li>Laravel</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Redis</li>
+            <li>Queues</li>
+            <li>Scheduler</li>
+            <li>Blade</li>
+          </ul>
+          <ul class="shots">
+            <li class="wide">
+              <figure>
+                <a href="images/auction/lotboard-catalog.png">
+                  <img loading="lazy" decoding="async" src="images/auction/lotboard-catalog.png" alt="Lotboard auction catalog with categories, filters, and timed lots">
+                </a>
+                <figcaption>Auction catalog</figcaption>
               </figure>
             </li>
           </ul>
