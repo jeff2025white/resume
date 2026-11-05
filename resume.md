@@ -14,7 +14,7 @@ Full-stack engineer with 7 years at Alibaba, building distributed systems for Al
 
 ## 02 Skills
 
-`Java` `Go` `Python` `PHP` `Kotlin` `Microservices` `MySQL` `PostgreSQL` `Redis` `Kafka` `RocketMQ` `API gateway` `Distributed locks` `DB sharding` `FastAPI` `Django` `Laravel` `Blade` `Phaser` `Android` `LLM integration` `OCR / computer vision`
+`Java` `Go` `Python` `PHP` `Kotlin` `Microservices` `MySQL` `PostgreSQL` `Redis` `Kafka` `RocketMQ` `API gateway` `Distributed locks` `DB sharding` `FastAPI` `Django` `Laravel` `Blade` `Phaser` `Android` `Payment` `LLM integration` `OCR / computer vision`
 
 ## 03 Experience
 
@@ -137,6 +137,15 @@ Owned services for order, settlement, and merchant open APIs on a global cross-b
 - Modularized with ARouter and product flavors; integrated pay, push, maps, and short-video upload for a releasable APK.
 
 **Stack:** Android · Java · REST API · OkHttp / OkGo · ARouter · Agora RTC · Tencent IM
+
+![Live hall feed with category tabs and live room grid](https://webpans.com/images/live/1.jpg)
+*Live · hall*
+
+![Live room with streamer video, chat, gifts, and viewer overlays](https://webpans.com/images/live/2.jpg)
+*Live · room*
+
+![Profile page with wallet, VIP, and certification center](https://webpans.com/images/live/3.jpg)
+*Live · profile*
 
 ---
 

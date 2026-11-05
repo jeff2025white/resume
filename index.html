@@ -328,6 +328,14 @@
 
     .shots .wide { grid-column: 1 / -1; }
 
+    .shots.phones {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .shots.phones figure {
+      background: #0d0c0b;
+    }
+
     .facts {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -348,6 +356,7 @@
       .site-nav .inner { flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 0 4px; }
       .site-nav ul { justify-content: flex-start; padding-top: 4px; }
       .shots { grid-template-columns: 1fr; }
+      .shots.phones { grid-template-columns: 1fr 1fr; }
       .shots .wide { grid-column: auto; }
       .facts { grid-template-columns: 1fr; }
     }
@@ -370,10 +379,11 @@
       h2, h3, .where { break-after: avoid; }
       #projects { break-before: page; padding-top: 0; }
       .entry + .group-title { break-before: page; margin-top: 0; }
-      #project-live-android { break-before: page; break-inside: avoid; }
+      #project-live-android { break-before: page; }
       .shots .wide figure { width: 82%; }
       #project-order .shots .wide figure,
       #project-open-api .shots .wide figure { width: 62%; }
+      #project-live-android .shots.phones { grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .entry h3 { font-size: 18pt; }
       .shots li, .facts .entry { break-inside: avoid; }
       a { text-decoration: none; }
@@ -442,6 +452,7 @@
           <li>Blade</li>
           <li>Phaser</li>
           <li>Android</li>
+          <li>Payment</li>
           <li>LLM integration</li>
           <li>OCR / computer vision</li>
         </ul>
@@ -700,6 +711,32 @@
             <li>ARouter</li>
             <li>Agora RTC</li>
             <li>Tencent IM</li>
+          </ul>
+          <ul class="shots phones">
+            <li>
+              <figure>
+                <a href="images/live/1.jpg">
+                  <img loading="lazy" decoding="async" src="images/live/1.jpg" alt="Live hall feed with category tabs and live room grid">
+                </a>
+                <figcaption>Live · hall</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a href="images/live/2.jpg">
+                  <img loading="lazy" decoding="async" src="images/live/2.jpg" alt="Live room with streamer video, chat, gifts, and viewer overlays">
+                </a>
+                <figcaption>Live · room</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a href="images/live/3.jpg">
+                  <img loading="lazy" decoding="async" src="images/live/3.jpg" alt="Profile page with wallet, VIP, and certification center">
+                </a>
+                <figcaption>Live · profile</figcaption>
+              </figure>
+            </li>
           </ul>
         </article>
       </section>
